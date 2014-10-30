@@ -3,16 +3,17 @@ let mapleader=","
 
 " Now ; works just like : but with 866% less keypresses!
 nnoremap ; :
+vnoremap ; :
 
 " Move more naturally up/down when wrapping is enabled.
 nnoremap j gj
 nnoremap k gk
 
 " Disable arrow keys
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
 
 " Local dirs
 set backupdir=$DOTFILES/caches/vim
@@ -33,26 +34,26 @@ colorscheme molokai
 set background=dark
 
 " Visual settings
-set cursorline " Highlight current line
+"set cursorline " Highlight current line
 set number " Enable line numbers.
 set showtabline=2 " Always show tab bar.
-set relativenumber " Use relative line numbers. Current line is still in status bar.
+"set relativenumber " Use relative line numbers. Current line is still in status bar.
 set title " Show the filename in the window titlebar.
 set nowrap " Do not wrap lines.
 set noshowmode " Don't show the current mode (airline.vim takes care of us)
 set laststatus=2 " Always show status line
 
 " Toggle between absolute and relative line numbers
-augroup relative_numbers
-  autocmd!
-  " Show absolute numbers in insert mode
-  autocmd InsertEnter * :set norelativenumber
-  autocmd InsertLeave * :set relativenumber
-augroup END
+"augroup relative_numbers
+"  autocmd!
+"  " Show absolute numbers in insert mode
+"  autocmd InsertEnter * :set norelativenumber
+"  autocmd InsertLeave * :set relativenumber
+"augroup END
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+"set textwidth=80
+"set colorcolumn=+1
 
 " Scrolling
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
@@ -93,7 +94,7 @@ function! ToggleInvisibles()
   endif
 endfunction
 
-set nolist
+set nolist!
 call ToggleInvisibles()
 
 " Trim extra whitespace
